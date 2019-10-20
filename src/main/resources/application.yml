@@ -1,0 +1,30 @@
+
+server:
+   port: 9000
+
+# DB설정
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/musinsa?characterEncoding=utf8&characterSetResults=utf8&serverTimezone=UTC&useSSL=false
+    username: root
+    password: root
+#jsp 파일 바로 반영
+  devtools:
+    livereload:
+      enabled: true
+
+#utf-8 encoding
+
+  # jsp 파일을 사용하기 위한 설정
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true
+
+
