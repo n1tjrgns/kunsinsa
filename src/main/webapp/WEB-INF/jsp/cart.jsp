@@ -83,7 +83,7 @@
         </div>
         <!-- Cart Menu -->
         <div class="cart-fav-search mb-100">
-            <a href="cart.html" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Cart <span>(0)</span></a>
+            <a href="cart" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Cart <span>(0)</span></a>
             <a href="#" class="fav-nav"><img src="img/core-img/favorites.png" alt=""> Favourite</a>
             <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Search</a>
         </div>
@@ -192,7 +192,7 @@
                             <li><span>total:</span> <span>$140.00</span></li>
                         </ul>
                         <div class="cart-btn mt-100">
-                            <a href="cart.html" class="btn amado-btn w-100">Checkout</a>
+                            <a href="cart" class="btn amado-btn w-100">Checkout</a>
                         </div>
                     </div>
                 </div>
@@ -255,19 +255,19 @@
                             <div class="collapse navbar-collapse" id="footerNavContent">
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="index.jsp">Home</a>
+                                        <a class="nav-link" href="index">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="shop.jsp">Shop</a>
+                                        <a class="nav-link" href="shop">Shop</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="product-details.jsp">Product</a>
+                                        <a class="nav-link" href="product-details">Product</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="cart.html">Cart</a>
+                                        <a class="nav-link" href="cart">Cart</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="checkout.jsp">Checkout</a>
+                                        <a class="nav-link" href="checkout">Checkout</a>
                                     </li>
                                 </ul>
                             </div>
