@@ -257,7 +257,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                             <a class="nav-link" href="product-details.jsp">Product</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="cart.html">Cart</a>
+                                            <a class="nav-link" href="cart">Cart</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="checkout.jsp">Checkout</a>

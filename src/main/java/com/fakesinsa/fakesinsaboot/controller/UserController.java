@@ -60,11 +60,6 @@ public class UserController {
         return "kunsinsa/purchase";
     }
 
-    @RequestMapping("/shop")
-    public String shop(){
-        return "kunsinsa/shop";
-    }
-
     @RequestMapping("/product-details")
     public String productDetails(){
         return "kunsinsa/product-details";
