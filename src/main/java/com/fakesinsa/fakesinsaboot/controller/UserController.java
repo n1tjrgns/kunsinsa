@@ -19,63 +19,60 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    /*쿤신사 경로매핑*/
     @RequestMapping("/cart")
     public String cart(){
-        return "cart";
+        return "kunsinsa/cart";
     }
 
     @RequestMapping("/")
     public String main(){
-        return "index";
+        return "kunsinsa/index";
     }
 
     @RequestMapping("/join")
     public String join(){
-        return "join";
+        return "kunsinsa/join";
     }
 
     @RequestMapping("/index")
     public String index(){
-        return "index";
+        return "kunsinsa/index";
     }
 
     @RequestMapping("/login")
     public String login(){
-        return "login";
+        return "kunsinsa/login";
     }
 
     @RequestMapping("/checkout")
     public String checkout(){
-        return "checkout";
+        return "kunsinsa/checkout";
     }
 
     @RequestMapping("/logout")
     public String logout(){
-        return "logout";
+        return "kunsinsa/logout";
     }
 
     @RequestMapping("/purchase")
     public String purchase(){
-        return "purchase";
+        return "kunsinsa/purchase";
     }
 
     @RequestMapping("/shop")
     public String shop(){
-        return "shop";
+        return "kunsinsa/shop";
     }
 
     @RequestMapping("/product-details")
     public String productDetails(){
-        return "product-details";
+        return "kunsinsa/product-details";
     }
-
-
-
-
 
     @RequestMapping("/signup")
     public String signup(){
-        return "signup";
+        return "kunsinsa/signup";
     }
 
     @RequestMapping(value = "logincheck")
