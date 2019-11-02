@@ -1,11 +1,14 @@
 package com.fakesinsa.fakesinsaboot.mapper;
 
+import com.fakesinsa.fakesinsaboot.model.Criteria;
+
 import java.util.HashMap;
 import java.util.List;
 
 public interface ShopPagingMapper {
 
-    List<HashMap<String,Object>> getProductByCategory() ;
+        int getProductCnt();
 
-    int getProductCnt();
+    List<HashMap<String,Object>> listPaging(Criteria cri);
+
 }

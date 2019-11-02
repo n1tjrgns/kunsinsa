@@ -4,21 +4,17 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.fakesinsa.fakesinsaboot.mapper.ShopPagingMapper">
 
-   <!-- <resultMap id="productResult" type="com.fakesinsa.fakesinsaboot.model.Product">
-        <result column="prduct_id" property="prductId"/>
-        <result column="product_category" property="productCategory"/>
-        <result column="product_name" property="productName"/>
-        <result column="prduct_price" property="prductPrice"/>
-        <result column="product_detail" property="productDetail"/>
-        <result column="product_img" property="productImg"/>
-    </resultMap>-->
-
-    <select id="getProductByCategory"  parameterType="hashmap" resultType="hashmap" >
-        select * from product;
-    </select>
 
     <select id="getProductCnt" parameterType="int" resultType="int">
         select count(product_id) from product;
     </select>
 
+    <select id="listPaging" resultType="hashmap">
+        select product_id, product_category, product_name, product_price, product_detail, product_img
+        from product
+        where product_id > 0
+        and product_category = #{category}
+        order by product_id
+        limit #{pageStart}, #{perPageNum}
+    </select>
 </mapper>

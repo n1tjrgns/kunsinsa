@@ -111,17 +111,17 @@
                 <!--  Catagories  -->
                 <div class="catagories-menu">
                     <ul>
-                        <li class="active"><a href="#">Outer</a></li>
-                        <li><a href="#">Top</a></li>
-                        <li><a href="#">Bottoms</a></li>
-                        <li><a href="#">Accesories</a></li>
+                        <li name="outer"><a href="/shop?category=outer">Outer</a></li>
+                        <li name="top"><a href="/shop?category=top">Top</a></li>
+                        <li name="bottoms"><a href="/shop?category=bottoms">Bottoms</a></li>
+                        <li name="accesories"><a href="/shop?category=accesories">Accesories</a></li>
                     </ul>
                 </div>
             </div>
 
 
             <!-- ##### Single Widget ##### -->
-            <div class="widget color mb-50">
+           <%-- <div class="widget color mb-50">
                 <!-- Widget Title -->
                 <h6 class="widget-title mb-30">Color</h6>
 
@@ -137,12 +137,12 @@
                         <li><a href="#" class="color8"></a></li>
                     </ul>
                 </div>
-            </div>
+            </div>--%>
 
             <!-- ##### Single Widget ##### -->
             <div class="widget price mb-50">
                 <!-- Widget Title -->
-                <h6 class="widget-title mb-30">Price</h6>
+                <%--<h6 class="widget-title mb-30">Price</h6>
 
                 <div class="widget-desc">
                     <div class="slider-range">
@@ -153,7 +153,7 @@
                         </div>
                         <div class="range-price">$10 - $1000</div>
                     </div>
-                </div>
+                </div>--%>
             </div>
         </div>
 
@@ -165,11 +165,11 @@
                         <div class="product-topbar d-xl-flex align-items-end justify-content-between">
                             <!-- Total Products -->
                             <div class="total-products">
-                                <p>Showing 1-8 0f 25</p>
+                                <%--<p>Showing 1-8 0f 25</p>
                                 <div class="view d-flex">
                                     <a href="#"><i class="fa fa-th-large" aria-hidden="true"></i></a>
                                     <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
-                                </div>
+                                </div>--%>
                             </div>
                             <!-- Sorting -->
                             <div class="product-sorting d-flex">
@@ -184,9 +184,18 @@
                                     </form>
                                 </div>--%>
                                 <div class="view-product d-flex align-items-center">
-                                    <%-- 우선 페이지에 보여줄 사진 수는 고정하고 페이징만
-                                    <p>View</p>
-                                    <form action="#" method="get">
+
+                                        <%--<p>Sort by</p>
+                                        <form action="#" method="get">
+                                            <select name="select" id="sortBydate">
+                                                <option value="value">Date</option>
+                                                <option value="value">Newest</option>
+                                                <option value="value">Popular</option>
+                                            </select>
+                                        </form>--%>
+
+                                   <%-- <p>View</p>
+                                    <form action="/shop?perPageNum=$('name=select').val()" method="get">
                                         <select name="select" id="viewProduct">
                                             <option value="10">10</option>
                                             <option value="20">20</option>
@@ -194,14 +203,6 @@
                                             <option value="40">40</option>
                                         </select>
                                     </form>--%>
-                                        <p>Sort by</p>
-                                        <form action="#" method="get">
-                                            <select name="select" id="sortBydate">
-                                                <option value="value">Date</option>
-                                                <option value="value">Newest</option>
-                                                <option value="value">Popular</option>
-                                            </select>
-                                        </form>
                                 </div>
                             </div>
                         </div>
@@ -211,14 +212,16 @@
                 <div class="row">
 
                     <!-- Single Product Area -->
-                    <c:forEach var="productMap" items="${productMap}" varStatus="index">
+                    <c:forEach var="productList" items="${productList}" varStatus="index">
                     <div class="col-12 col-sm-6 col-md-12 col-xl-6">
 
-                            <%--<c:forEach items="${productMap.value}" var="productItem">--%>
+                            <%--<c:forEach items="${productList.value}" var="productItem">--%>
                             <div class="single-product-wrapper">
                             <!-- Product Image -->
                             <div class="product-img">
-                                <img src="img/product-img/${productMap.product_img}" alt="">
+                                <a href="product-details">
+                                <img src="img/product-img/${productList.product_img}" alt="">
+                                </a>
                                 <!-- Hover Thumb -->
                                 <%--<img class="hover-img" src="img/product-img/product2.jpg" alt="">--%>
                             </div>
@@ -229,9 +232,9 @@
                                 <!-- Product Meta Data -->
                                 <div class="product-meta-data">
                                     <div class="line"></div>
-                                    <p class="product-price">$${productMap.product_price}</p>
-                                    <a href="product-details.jsp">
-                                        <h6>${productMap.product_name}</h6>
+                                    <p class="product-price">$${productList.product_price}</p>
+                                    <a href="product-details">
+                                        <h6>${productList.product_name}</h6>
                                     </a>
                                 </div>
                                 <!-- Ratings & Cart -->
@@ -260,27 +263,20 @@
                         <!-- Pagination -->
                         <nav aria-label="navigation">
                             <ul class="pagination justify-content-end mt-50">
-
-                                    <li><a href="/currentPage?page=${ start }">◀</a></li>
-
-                                <c:forEach var="i" begin="${ start }" end="${ end }">
-                                    <c:choose>
-                                        <c:when test="${ i > end }">
-                                            <li>${ i }</li>
-                                        </c:when>
-                                        <c:when test="${ i == curPageNum }">
-                                            <li class="selected">${ i }</li>
-                                        </c:when>
-
-                                        <c:otherwise>
-                                            <li><a href="/currentPage?page=${ i }">${ i }</a></li>
-                                        </c:otherwise>
-                                    </c:choose>
+                                <%--클릭되면 class에 active 속성 추가 해야함.--%>
+                                <c:if test="${pageMaker.prev}">
+                                    <li class="page-item"><a class="page-link" href="/shop?page=${pageMaker.startPage - 1}">이전</a></li>
+                                </c:if>
+                                <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+                                    <li <c:out value="${pageMaker.cri.page == idx ? 'class=page-item' : ''}" /> >
+                                        <a  class="page-link" href="/shop?page=${idx}">${idx}</a>
+                                        <%--class="page-link"--%>
+                                    </li>
                                 </c:forEach>
-                                <li class="page-item active"><a class="page-link" href="#" onclick="paging();">01.</a></li>
-                                <li class="page-item"><a class="page-link" href="#">02.</a></li>
-                                <li class="page-item"><a class="page-link" href="#">03.</a></li>
-                                <li class="page-item"><a class="page-link" href="#">04.</a></li>
+                                <%--<li class="page-item"><a class="page-link" href="#">04.</a></li>--%>
+                                <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+                                    <li class="page-item"><a class="page-link" href="/shop?page=${pageMaker.endPage + 1}">다음</a></li>
+                                </c:if>
                             </ul>
                         </nav>
                     </div>
@@ -295,14 +291,19 @@
 
 </body>
 <script>
-    var idx=1;
-    function paging(idx) {
-
-    }
-/* var pageObj = document.getElementById("viewProduct");
- var pageValue = pageObj.options[pageObj.selectedIndex].value;
- console.log(pageValue);*/
+    $(document).ready(function () {
+       var url = location.search.split("=");
+       var categoryVal = url[1];
+        console.log(categoryVal);
+        if(categoryVal == 'outer'){
+            $('li[name=outer]').addClass('active');
+        }else if(categoryVal == 'top'){
+            $('li[name=top]').addClass('active');
+        }else if(categoryVal == 'bottoms'){
+            $('li[name=bottoms]').addClass('active');
+        }else if(categoryVal == 'accesories'){
+            $('li[name=accesories]').addClass('active');
+        }
+    });
 </script>
-
-
 </html>
